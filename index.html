@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2d2418">
+  <meta name="description" content="Arma Flour Mill — coming soon.">
+  <title>Arma Flour Mill | Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #fff8e9;
+      --gold: #c3a16a;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: #2d2418;
+      color: var(--cream);
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    }
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 28px 22px;
+      text-align: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: url("wheat-background.jpeg") center 52% / cover no-repeat;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        180deg,
+        rgba(24, 20, 14, .28) 0%,
+        rgba(24, 20, 14, .43) 48%,
+        rgba(24, 20, 14, .55) 100%
+      );
+    }
+    .content {
+      width: min(100%, 620px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: appear .7s ease-out both;
+    }
+    .logo {
+      display: block;
+      width: clamp(88px, 12vw, 118px);
+      height: auto;
+      margin: 0 auto 25px;
+      object-fit: contain;
+      filter: drop-shadow(0 1px 8px rgba(0,0,0,.14));
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.35rem, 3.3vw, 2rem);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+      text-shadow: 0 1px 8px rgba(0,0,0,.18);
+    }
+    .rule {
+      width: min(100%, 430px);
+      height: 1px;
+      margin: 17px 0 17px;
+      background: rgba(255, 248, 233, .78);
+    }
+    .tagline {
+      max-width: 390px;
+      margin: 0;
+      font-size: clamp(.78rem, 1.6vw, .92rem);
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: .095em;
+      text-shadow: 0 1px 6px rgba(0,0,0,.2);
+    }
+    @keyframes appear {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 24px 20px; }
+      .hero::before { background-position: 46% center; }
+      .logo { width: 88px; margin-bottom: 22px; }
+      h1 { font-size: clamp(1.18rem, 5vw, 1.45rem); letter-spacing: .045em; }
+      .rule { width: min(100%, 320px); margin: 15px 0 16px; }
+      .tagline { font-size: .76rem; letter-spacing: .07em; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .content { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="hero">
+    <section class="content" aria-labelledby="coming-soon">
+      <img class="logo" src="arma-logo.png" alt="Arma Flour Mill logo">
+      <h1 id="coming-soon">We're Coming Soon</h1>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="tagline">We're working hard to bring you<br>the best quality flour.</p>
+    </section>
+  </main>
+</body>
+</html>
